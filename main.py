@@ -84,7 +84,6 @@ def _getCommonArgs():
     state = request.args.get("state", "")
     return dateparser.parse(start), dateparser.parse(end), state
 
-
 @app.route("/")
 def root():
     start, end, state = _getCommonArgs()
@@ -248,9 +247,4 @@ if __name__ == "__main__":
     # the "static" directory. See:
     # http://flask.pocoo.org/docs/1.0/quickstart/#static-files. Once deployed,
     # App Engine itself will serve those files as configured in app.yaml.
-
-    app.run(host="0.0.0.0", port=8083, debug=True)
-
-    #app.run(host="192.168.0.18", port=8082, debug=True)
-    # app.run(host="0.0.0.0", port=8082, debug=True)
-    # run on actual IP address
+    app.run(host="10.0.0.66", port=8081, debug=True)
